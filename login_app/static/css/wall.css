@@ -1,0 +1,10 @@
+header h1, header h3{
+    width: 500px;
+    display: inline-block;
+}
+
+header {
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+

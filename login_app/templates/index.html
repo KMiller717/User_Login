@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    <div class='form'>
+        <h1>Registration</h1>
+        <form action='/register' method='post'>
+            
+            {% csrf_token %}
+            
+            First Name: <input type='text' name='first_name'></br>
+            Last Name:<input type='text' name ='last_name'><br>
+            Email: <input type='text' name='email'><br>
+            Password: <input type='password' name='password'><br>
+            Confirm Password: <input type='password' name='confirm_password'><br>
+            
+            <input type='submit' value="Register">
+            
+        </form>
+    </div>
+    <div class='form'>
+        <h1>Login</h1>
+        <form action='/login' method='post'>
+            {% csrf_token %}
+            Email: <input type='text' name='email'><br>
+            Password: <input type='password' name='password'><br>
+            <input type='submit' value="Login">
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
